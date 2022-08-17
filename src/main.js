@@ -12,8 +12,8 @@ async function getTrendingMoviesPreview(){
     const {data} = await api('trending/movie/day'); // llamamos la url de la api
     const movies = data.results; //obtenemos los datos, en este caso los datos con la propiedad results
 
+    trendingMoviesPreviewList.innerHTML = "";
     movies.forEach(movie => {
-        const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList')
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
         const movieImg = document.createElement('img');
@@ -30,8 +30,9 @@ async function getCategoriesPreview(){
     const{data} = await api('genre/movie/list');
     const categories = data.genres;
 
+    categoriesPreviewList.innerHTML = "";
+
     categories.forEach(category => {
-        const categoriesPreviewList = document.querySelector('#categoriesPreview .categoriesPreview-list');
 
         const categoryContainer = document.createElement('div');
         categoryContainer.classList.add('category-container');

@@ -48,6 +48,7 @@ function homePage(){
     getTrendingMoviesPreview();
     getCategoriesPreview();
 }
+
 function categoriesPage(){
     console.log('Category!!!')
 
@@ -64,6 +65,7 @@ function categoriesPage(){
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 }
+
 function movieDetailsPage(){
     console.log('Movie!!!')
 
@@ -80,6 +82,7 @@ function movieDetailsPage(){
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
 }
+
 function searchPage(){
     console.log('Busquedas!!!')
 
@@ -96,6 +99,7 @@ function searchPage(){
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 }
+
 function trendsPage(){
     console.log('TRENDS!!!')
 
