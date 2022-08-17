@@ -1,13 +1,12 @@
 async function getTrendingMoviesPreview(){
-    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=' + API_KEY);
-    const data = await res.json();
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=' + API_KEY); // llamamos la url de la api
+    const data = await res.json(); // La convertimos a JSON
+    const movies = data.results; //obtenemos los datos, en este caso los datos con la propiedad results
 
-    const movies = data.results;
     movies.forEach(movie => {
         const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList')
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
-
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie-img');
         movieImg.setAttribute('alt', movie.title);
@@ -18,4 +17,27 @@ async function getTrendingMoviesPreview(){
     });
 }
 
+async function getCategoriesPreview(){
+    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + API_KEY); // llamamos la url de la api
+    const data = await res.json(); // La convertimos a JSON
+    const categories = data.genres;
+
+    categories.forEach(category => {
+        const PreviewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list');
+
+        const categoryContainer = document.createElement('div');
+        categoryContainer.classList.add('category-container');
+
+        const categoryTitle = document.createElement('h3');
+        categoryTitle.classList.add('category-title');
+        categoryTitle.setAttribute('id', 'id' + category.id);
+        const categoryTitleText = document.createTextNode(category.name);
+
+        categoryTitle.appendChild(categoryTitleText);
+        categoryContainer.appendChild(categoryTitle);
+        PreviewCategoriesContainer.appendChild(categoryContainer);
+    });
+}
+
 getTrendingMoviesPreview();
+getCategoriesPreview();
