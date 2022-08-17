@@ -1,0 +1,19 @@
+{
+  "name": "curso-apirest",
+  "version": "1.0.0",
+  "description": "Curso Practico de Consumo de API REST",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKenneddy/curso-ApiRest.git"
+  },
+  "author": "@KKenneddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KKenneddy/curso-ApiRest/issues"
+  },
+  "homepage": "https://github.com/KKenneddy/curso-ApiRest#readme"
+}
